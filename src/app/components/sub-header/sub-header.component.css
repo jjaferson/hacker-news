@@ -1,0 +1,15 @@
+
+.sub-header {
+  background-color:#f0f0e9;
+  margin: auto 0;
+  padding: 0 10%;
+  height: 50px;
+}
+
+h2.sub-header-title{
+  margin: 0px;
+  padding: 10px;
+  color: #929090;
+  text-align: center;
+  font-weight: 500;
+}

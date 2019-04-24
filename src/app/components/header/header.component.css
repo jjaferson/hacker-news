@@ -1,0 +1,17 @@
+header {
+  background-color:#fe6d02;
+  padding: 0 10%;
+  height: 56px;
+}
+
+header h1 {
+  margin: 0;
+  color: white;
+  font-family: 'Mukta', sans-serif;
+}
+
+header h1 {
+  background:  url(../../../assets/logo.png) no-repeat left center;
+  background-size: 64px 64px;
+  padding-left: 64px;
+}

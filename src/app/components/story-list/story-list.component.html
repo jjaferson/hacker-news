@@ -1,0 +1,34 @@
+ <button class="bt-new-stories" [hidden]="!showLoadNewStories" (click)="loadLatestStories()"> 
+  See new {{ numberOfNewStories }} stories 
+</button>
+<div class="story-container" *ngIf="!showErrorMessage">
+  <ul appInfiniteScroller scrollPercent="70" (loadMore)="loadMore()">
+    <li *ngFor="let story of stories">
+      <div class="item-container" *ngIf="!!story">
+        <div class="item">
+          <div class="amount"> {{ story.score }} </div>
+          <div class="label">
+            <small>POINTS</small>
+          </div>
+        </div>
+        <div class="item">
+          <div class="amount">{{ story.descendants }}</div>
+          <div class="label">
+            <small>COMMENTS</small>
+          </div>
+        </div>
+        <div class="item story-overview">
+            <a href="{{ story.url }}" target="_black"><h4 class="title">{{ story.title }}</h4></a>
+            <div class="description">
+              <span class="time"> {{ story.time * 1000 | date }} </span>
+              <span class="person"> {{ story.by }}</span>
+              <span class="url">{{ story.url | domainUrl }}</span>
+            </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="loader" [hidden]="!loadingStories"></div>
+</div>
+<div *ngIf="showErrorMessage">Unfortunately we couldn't load the stories, try again later.</div>
